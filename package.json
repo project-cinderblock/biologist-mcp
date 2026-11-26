@@ -1,6 +1,6 @@
 {
   "name": "biologist-mcp",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Model Context Protocol (MCP) server for Biologist comparative biology, ecology, and organismal taxonomy platform",
   "main": "dist/index.js",
   "type": "module",
