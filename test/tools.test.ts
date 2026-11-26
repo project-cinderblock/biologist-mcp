@@ -32,7 +32,7 @@ describe("MCP Server Tool, Resource, and Prompt Execution", () => {
     mock.restore();
   });
 
-  it("registers all 51 expected tools across all 8 domains", () => {
+  it("registers all expected tools across all 8 domains", () => {
     const registeredToolNames = Object.keys((server as any)._registeredTools);
 
     const expectedTools = [
@@ -75,12 +75,13 @@ describe("MCP Server Tool, Resource, and Prompt Execution", () => {
       "delete_cluster_snapshot",
       "list_cluster_groups",
       "get_cluster_group",
-      // Reports (9)
+      // Reports (10)
       "list_cluster_reports",
       "get_cluster_report",
       "create_cluster_report",
       "delete_cluster_report",
       "generate_deep_synthesis",
+      "wait_for_cluster_report",
       "list_report_summaries",
       "get_report_summary",
       "list_report_sub_reports",
@@ -100,7 +101,7 @@ describe("MCP Server Tool, Resource, and Prompt Execution", () => {
     for (const tool of expectedTools) {
       expect(registeredToolNames).toContain(tool);
     }
-    expect(registeredToolNames.length).toBe(51);
+    expect(registeredToolNames.length).toBe(expectedTools.length);
   });
 
   it("executes get_platform_status tool cleanly", async () => {
